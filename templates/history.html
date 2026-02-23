@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<div class="page-container">
+  <div class="page-card">
+    <h2>Scan History</h2>
+
+    {% if session.get("history") %} {% for item in session.get("history") %}
+    <div class="history-item">
+      <p><strong>URL:</strong> {{ item.url }}</p>
+      <p><strong>Legitimate:</strong> {{ item.legitimate }}%</p>
+      <p><strong>Phishing:</strong> {{ item.phishing }}%</p>
+      <hr />
+    </div>
+    {% endfor %} {% else %}
+    <p>No scan history available.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>PhishShield-AI</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    {% if session.get('user') %}
+    <div class="navbar">
+      <div class="logo">PhishShield-AI</div>
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/history">History</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+    {% endif %} {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

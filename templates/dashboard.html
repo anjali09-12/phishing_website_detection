@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="page-container">
+  <div class="page-card">
+    <h2>Dashboard</h2>
+    <p>Check whether a website URL is phishing or legitimate.</p>
+    <input type="text" id="urlInput" placeholder="Enter Website URL" />
+    <button onclick="checkURL()">Check Now</button>
+
+    <div id="result">🔍 Scan results appear here</div>
+  </div>
+</div>
+
+{% endblock %}
